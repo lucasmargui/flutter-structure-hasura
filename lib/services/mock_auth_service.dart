@@ -34,4 +34,8 @@ class MockAuthService implements AuthService {
       throw 'Não foi possivel criar sua conta nesse momento. Tente mais tarde';
     }
   }
+
+  @override
+  // TODO: implement userToken
+  Future<String> get userToken => throw UnimplementedError();
 }

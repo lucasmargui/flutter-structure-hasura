@@ -40,6 +40,7 @@ dependencies:
   firebase_core: ^2.24.2
   firebase_auth: ^4.16.0
   cloud_functions: ^4.6.0
+  graphql_flutter: ^5.1.2
 
 dev_dependencies:
   flutter_test:

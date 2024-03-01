@@ -1,8 +1,8 @@
 // ignore_for_file: unnecessary_null_comparison, prefer_const_constructors, prefer_const_literals_to_create_immutables, library_private_types_in_public_api
 
+import 'package:cloudfunction_app/features/home/home_page.dart';
 import 'package:flutter/material.dart';
 
-import 'features/sign_in/sign_in_page.dart';
 import 'features/sign_up/sign_up_page.dart';
 
 class App extends StatefulWidget {
@@ -18,7 +18,7 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 4, vsync: this);
+    _tabController = TabController(length: 2, vsync: this);
   }
 
   @override
@@ -32,18 +32,18 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Flutter Firebase Exemplo'),
+          title: const Text('GraphQL Exemplo'),
           bottom: TabBar(
             controller: _tabController,
             tabs: const [
-              Tab(text: 'Login Firebase'),
-              Tab(text: 'Cadastro Firebase'),
+              Tab(text: 'GraphQL cadastro'),
+              Tab(text: 'Exemplo'),
             ],
           ),
         ),
         body: TabBarView(
           controller: _tabController,
-          children: [SignInPage(), SignUpPage()],
+          children: [HomePage(), Text('')],
         ),
       ),
     );

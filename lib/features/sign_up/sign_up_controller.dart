@@ -5,17 +5,25 @@ import 'dart:developer';
 import 'package:flutter/foundation.dart';
 
 import '../../services/auth_service.dart';
+import '../../services/graphql_service.dart';
 
 class SignUpController extends ChangeNotifier {
-  final AuthService _service;
-  SignUpController(this._service);
+  final AuthService authService;
+  final GraphQlService graphQLService;
+
+  SignUpController({required this.authService, required this.graphQLService});
 
   Future<void> signUp(
       {required String name,
       required String email,
       required String password}) async {
     try {
-      await _service.signUp(name: name, email: email, password: password);
+      final user = await authService.signUp(
+          name: name, email: email, password: password);
+
+      if (user.id != null) {
+        await graphQLService.init();
+      }
     } catch (e) {
       log(e.toString());
     }
