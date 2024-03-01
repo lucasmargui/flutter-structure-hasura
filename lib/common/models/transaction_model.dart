@@ -23,7 +23,7 @@ class TransactionModel {
   factory TransactionModel.fromMap(Map<String, dynamic> map) {
     return TransactionModel(
       description: map['description'] as String,
-      value: map['value'] as double,
+      value: double.tryParse(['value'].toString()) ?? 0,
       date: DateTime.parse(map['date'] as String).microsecondsSinceEpoch,
     );
   }
