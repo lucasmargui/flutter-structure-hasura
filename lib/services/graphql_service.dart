@@ -8,9 +8,7 @@ class GraphQlService {
   GraphQlService({required this.authService});
 
   //Utilizando late é preciso que init seja executado antes de client seja utilizado
-  //late GraphQLClient client;
-  // Declaração de um cliente GraphQL, inicialmente nulo.
-  GraphQLClient? client;
+  late GraphQLClient client;
 
   // Função para inicializar o cliente GraphQL com as configurações necessárias.
   Future<void> init() async {
