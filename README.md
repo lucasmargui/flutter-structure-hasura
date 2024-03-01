@@ -112,11 +112,20 @@ Configuração do index.js com base no console do projeto criado no Hasura:
 
 ### Exportando funções para Cloud Functions
 
-Configure as funções de acordo com a lógica desejada e com base nas necessidades do seu projeto e nos endpoints fornecidos pelo Hasura. Isso normalmente envolve a definição de resolvers GraphQL e a conexão com o banco de dados Hasura.
+Configure as funções de acordo com a lógica desejada e com base nas necessidades do seu projeto e nos endpoints fornecidos pelo Hasura. Isso normalmente envolve a definição de resolvers GraphQL e a conexão com o banco de dados Hasura. Ao final de exportar as funções utilize o comando para exportar as funções para cloud function
+
+
 
 <div align="center">
    <img src="https://github.com/lucasmargui/Flutter_Estrutura_Hasura_Integracao/assets/157809964/530de225-dbd5-431f-85bf-136428306321" style="width:100%">
 </div>
+
+Comando para exportar as funções
+
+```
+firebase deploy
+
+```
 
 
 
