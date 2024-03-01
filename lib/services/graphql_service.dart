@@ -7,7 +7,8 @@ class GraphQlService {
 
   GraphQlService({required this.authService});
 
-  late GraphQLClient client;
+  //late GraphQLClient client;
+  GraphQLClient? client;
 
   Future<void> init() async {
     final token = await authService.userToken;

@@ -1,15 +1,18 @@
 // ignore_for_file: unnecessary_null_comparison, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:cloudfunction_app/features/home/home_state.dart';
+import 'package:cloudfunction_app/services/graphql_service.dart';
 import 'package:flutter/foundation.dart';
 
 import '../../common/models/transaction_model.dart';
 import '../../repositories/transaction_repository.dart';
 
 class HomeController extends ChangeNotifier {
-  final TransactionRepository _transactionRepository;
+  final TransactionRepository transactionRepository;
+  final GraphQlService graphQlService;
 
-  HomeController(this._transactionRepository);
+  HomeController(
+      {required this.transactionRepository, required this.graphQlService});
 
   HomeState _state = HomeInitialState();
 
@@ -28,7 +31,8 @@ class HomeController extends ChangeNotifier {
     _changeState(HomeLoadingState());
 
     try {
-      _transactions = await _transactionRepository.getAllTransactions();
+      await graphQlService.init();
+      await transactionRepository.getAllTransactions();
 
       _changeState(HomeSuccessState());
     } catch (e) {

@@ -1,5 +1,7 @@
+import 'package:cloudfunction_app/features/home/home_controller.dart';
 import 'package:cloudfunction_app/services/graphql_service.dart';
 import 'package:get_it/get_it.dart';
+import '../repositories/transaction_repository.dart';
 import '../services/auth_service.dart';
 import '../services/firebase_auth_service.dart';
 
@@ -15,8 +17,12 @@ void setupDependencies() {
     () => GraphQlService(authService: locator.get<AuthService>()),
   );
 
-  locator.registerFactory<SignUpController>(() => SignUpController(
-        authService: locator.get<AuthService>(),
-        graphQLService: locator.get<GraphQlService>(),
+  locator.registerFactory<TransactionRepository>(
+    () => TransactionRepositoryImpl(),
+  );
+
+  locator.registerFactory<HomeController>(() => HomeController(
+        transactionRepository: locator.get<TransactionRepository>(),
+        graphQlService: locator.get<GraphQlService>(),
       ));
 }
