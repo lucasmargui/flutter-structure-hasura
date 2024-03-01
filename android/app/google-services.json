@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "971823625776",
+    "project_id": "integracao-exemplo",
+    "storage_bucket": "integracao-exemplo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:971823625776:android:40228739ac47e9ab30dff5",
+        "android_client_info": {
+          "package_name": "com.example.cloudfunction_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyVlc4esU8jvlaTpx4ITw2J549CtVxpZ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
