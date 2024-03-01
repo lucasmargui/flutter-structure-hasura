@@ -46,6 +46,45 @@ Utilize a interface do Hasura para criar as tabelas necessárias seguindo o flux
 </div>
 
 
+### Configuração de variáveis
+
+Adição da Key "Hasura_graphql_jwt_secret" nas variáveis da api gerando um  JWT Config para Firebase
+
+#### Passo 1 : No projeto  abra "Env vars" e clique em "New Env Var".
+
+
+<div align="center">
+  <img src="https://github.com/lucasmargui/Flutter_Estrutura_Hasura_Integracao/assets/157809964/e5b195b3-cef9-445c-9959-c6f9de460ee4" style="width:70%">
+</div>
+
+
+#### Passo 2 : Selecione HASURA_GRAPHQL_JWT_SECRET
+
+
+
+<div align="center">
+  <img src="https://github.com/lucasmargui/Flutter_Estrutura_Hasura_Integracao/assets/157809964/27a3f53c-1342-4a19-b61f-c0e5e685819c" style="width:70%">
+</div>
+
+#### Passo 3 : Geração de JWT Config para Firebase
+
+Acesse o site https://hasura.io/jwt-config e preencha com as informações do projeto
+
+
+<div align="center">
+  <img src="https://github.com/lucasmargui/Flutter_Estrutura_Hasura_Integracao/assets/157809964/53ae3331-b7e0-4f91-b345-409a426fcc28" style="width:70%">
+</div>
+
+#### Passo 4 : JWT CONFIG
+
+Com jwt gerado adicione a key e salve HASURA_GRAPHQL_JWT_SECRET
+
+
+
+<div align="center">
+  <img src="https://github.com/lucasmargui/Flutter_Estrutura_Hasura_Integracao/assets/157809964/9a342838-fe4d-4014-af9a-321f77c302cb" style="width:70%">
+</div>
+
 ## Configuração Firebase:
 
 ### Criação do Projeto Firebase
