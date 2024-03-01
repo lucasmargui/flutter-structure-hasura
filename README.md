@@ -211,6 +211,29 @@ Para evitar a criação repetida dessa instância em locator, podemos registrar 
 </div>
 
 
+### Consulta utilizando GraphQLService
+
+Final client está recuperando a propriedade client da classe GraphQLService que é um Singleton, quando a função init foo executada (no caso de um registro ou de login bem sucedido) o link de autenticação armazenado em client vai pertencer a classe GraphQLService e será armazenada em memória podendo ser acessado em nivel global a qualquer momento
+
+
+<div align="center">
+  <img src="https://github.com/lucasmargui/Flutter_Estrutura_Hasura_Integracao/assets/157809964/9bc44fb6-feb0-456d-b824-b29b7f90c63e" style="width:70%">
+</div>
+
+
+Com acesso autenticado, realizaremos uma query através da API do Hasura e faremos uma consulta no banco de dados na tabela Transactions e ulilizaremos a query armazenada em constants/queries
+
+
+
+<div align="center">
+  <img src="https://github.com/lucasmargui/Flutter_Estrutura_Hasura_Integracao/assets/157809964/6773d5f5-6356-4a07-b3e3-e5c2e1b59a60" style="width:45%">
+   <img src="https://github.com/lucasmargui/Flutter_Estrutura_Hasura_Integracao/assets/157809964/db686221-8f65-41c6-adbe-3bc0757f99ef" style="width:45%">
+</div>
+
+
+
+
+
 
 
 
