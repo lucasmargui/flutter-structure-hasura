@@ -9,12 +9,6 @@
 - cloud_functions: ^4.6.0
 - graphql_flutter: ^5.1.2
 
-## Estrutura
-
-A estrutura a seguir foi desenvolvida como base a utilização de Flutter_Estrutura_Firebase.
-
-
-
 
 ## Configuração Hasura:
 
@@ -46,11 +40,17 @@ Utilize a interface do Hasura para criar as tabelas necessárias seguindo o flux
 </div>
 
 
-### Configuração de variáveis
+## Configuração de variáveis Hasura
 
-Adição da Key "Hasura_graphql_jwt_secret" nas variáveis da api gerando um  JWT Config para Firebase
+O Hasura_graphql_jwt_secret é uma chave secreta utilizada para a geração e validação de tokens JWT (JSON Web Tokens) no Hasura. JWTs são frequentemente utilizados para autenticação e autorização em sistemas distribuídos.
 
-#### Passo 1 : No projeto  abra "Env vars" e clique em "New Env Var".
+No contexto do Hasura, essa chave é usada para assinar os tokens JWT gerados pelo Hasura quando um usuário é autenticado. Esses tokens JWT podem conter informações de autorização e outras informações necessárias para acessar recursos protegidos pelo Hasura.
+
+### Adição da Key "Hasura_graphql_jwt_secret" nas variáveis da api gerando um  JWT Config para Firebase
+
+
+
+### Passo 1 : No projeto  abra "Env vars" e clique em "New Env Var".
 
 
 <div align="center">
@@ -58,7 +58,7 @@ Adição da Key "Hasura_graphql_jwt_secret" nas variáveis da api gerando um  JW
 </div>
 
 
-#### Passo 2 : Selecione HASURA_GRAPHQL_JWT_SECRET
+### Passo 2 : Selecione HASURA_GRAPHQL_JWT_SECRET
 
 
 
@@ -66,7 +66,7 @@ Adição da Key "Hasura_graphql_jwt_secret" nas variáveis da api gerando um  JW
   <img src="https://github.com/lucasmargui/Flutter_Estrutura_Hasura_Integracao/assets/157809964/27a3f53c-1342-4a19-b61f-c0e5e685819c" style="width:70%">
 </div>
 
-#### Passo 3 : Geração de JWT Config para Firebase
+### Passo 3 : Geração de JWT Config para Firebase
 
 Acesse o site https://hasura.io/jwt-config e preencha com as informações do projeto
 
@@ -75,7 +75,7 @@ Acesse o site https://hasura.io/jwt-config e preencha com as informações do pr
   <img src="https://github.com/lucasmargui/Flutter_Estrutura_Hasura_Integracao/assets/157809964/53ae3331-b7e0-4f91-b345-409a426fcc28" style="width:70%">
 </div>
 
-#### Passo 4 : JWT CONFIG
+### Passo 4 : JWT CONFIG
 
 Com jwt gerado adicione a key e salve HASURA_GRAPHQL_JWT_SECRET
 
