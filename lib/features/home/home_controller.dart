@@ -9,10 +9,8 @@ import '../../repositories/transaction_repository.dart';
 
 class HomeController extends ChangeNotifier {
   final TransactionRepository transactionRepository;
-  final GraphQlService graphQlService;
 
-  HomeController(
-      {required this.transactionRepository, required this.graphQlService});
+  HomeController({required this.transactionRepository});
 
   HomeState _state = HomeInitialState();
 
@@ -31,7 +29,6 @@ class HomeController extends ChangeNotifier {
     _changeState(HomeLoadingState());
 
     try {
-      await graphQlService.init();
       await transactionRepository.getAllTransactions();
 
       _changeState(HomeSuccessState());
