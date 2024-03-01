@@ -213,7 +213,7 @@ Para evitar a criação repetida dessa instância em locator, podemos registrar 
 
 ### Consulta utilizando GraphQLService
 
-Final client está recuperando a propriedade client da classe GraphQLService que é um Singleton, quando a função init foo executada (no caso de um registro ou de login bem sucedido) o link de autenticação armazenado em client vai pertencer a classe GraphQLService e será armazenada em memória podendo ser acessado em nivel global a qualquer momento
+Final client está recuperando a propriedade client da classe GraphQLService que é um Singleton, quando a função init for executada (no caso de um registro ou de login bem sucedido) o link de autenticação armazenado em client vai pertencer a classe GraphQLService e será armazenada em memória podendo ser acessado em nivel global a qualquer momento
 
 
 <div align="center">
