@@ -68,7 +68,7 @@ No contexto do Hasura, essa chave é usada para assinar os tokens JWT gerados pe
 
 ### Passo 3 : Geração de JWT Config para Firebase
 
-Acesse o site https://hasura.io/jwt-config e preencha com as informações do projeto
+Acesse o site https://hasura.io/jwt-config e preencha com as informações do projeto.
 
 
 <div align="center">
@@ -136,7 +136,7 @@ Ao finalizar a configuração de Firebase Init, utilize o gerenciador de pacotes
 
 ### Index.js
 
-Configuração do index.js com base no console do projeto criado no Hasura:
+Configuração do index.js com base no console do projeto criado no Hasura.
 
 
 
@@ -151,7 +151,7 @@ Configuração do index.js com base no console do projeto criado no Hasura:
 
 ### Exportando funções para Cloud Functions
 
-Configure as funções de acordo com a lógica desejada e com base nas necessidades do seu projeto e nos endpoints fornecidos pelo Hasura. Isso normalmente envolve a definição de resolvers GraphQL e a conexão com o banco de dados Hasura. Ao final de exportar as funções utilize o comando para exportar as funções para cloud function
+Configure as funções de acordo com a lógica desejada e com base nas necessidades do seu projeto e nos endpoints fornecidos pelo Hasura. Isso normalmente envolve a definição de resolvers GraphQL e a conexão com o banco de dados Hasura. Ao final de exportar as funções utilize o comando para exportar as funções para cloud function.
 
 
 
@@ -165,6 +165,54 @@ Comando para exportar as funções
 firebase deploy
 
 ```
+
+
+## Configuração Front-End
+
+Adicione o pacote graphql ao flutter.
+
+```
+flutter pub add graphql_flutter
+
+```
+
+### Utilizando as funções do CloudFunction
+
+Para utilizar as funções que foram exportadas para CloudFunction basta criar uma instância de FirebaseFunction.
+
+
+
+<div align="center">
+   <img src="https://github.com/lucasmargui/Flutter_Estrutura_Hasura_Integracao/assets/157809964/f7fecd29-5d78-4c3e-bf78-128ce9c9ab79" style="width:70%">
+</div>
+
+e invoca-las através de um httpsCallable e o nome da função exportada
+
+<div align="center">
+   <img src="https://github.com/lucasmargui/Flutter_Estrutura_Hasura_Integracao/assets/157809964/6209524e-e581-4909-b83b-d7cec3a9af5d" style="width:70%">
+</div>
+
+### Criação de GraphQLService
+
+
+
+<div align="center">
+  <img src="https://github.com/lucasmargui/Flutter_Estrutura_Hasura_Integracao/assets/157809964/087977a0-3827-430d-b62f-2ae628ad4ad2" style="width:100%">
+</div>
+
+Ao definir GraphQLClient como uma variável late, significa que a declaramos, mas ainda não passaremos seu valor. Seu valor será inicializado após a chamada da função Future<void> init, que se conecta ao endpoint do GraphQL, cria um link de autenticação utilizando o token Bearer e, posteriormente, passa esse link concatenado para assim instanciar o cliente (client), passando o link com autenticação como propriedade.
+
+Para evitar a criação repetida dessa instância em locator, podemos registrar GraphQLClient como um lazySingleton. Dessa forma, ele será instanciado apenas uma vez quando for invocado, e poderemos acessar as propriedades da classe repetidamente, pois estarão armazenadas em memória.
+
+
+
+<div align="center">
+  <img src="https://github.com/lucasmargui/Flutter_Estrutura_Hasura_Integracao/assets/157809964/a10864f5-63a0-43fe-b9c8-20260fa6d21e" style="width:70%">
+</div>
+
+
+
+
 
 
 
